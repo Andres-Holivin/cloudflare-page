@@ -1,8 +1,5 @@
-'use client';
-
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { fetchProducts, Product } from '@/lib/api';
-import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
 export function ProductList() {
@@ -77,12 +74,10 @@ export function ProductList() {
             className="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
           >
             <div className="relative h-48 bg-gray-100">
-              <Image
+              <img
                 src={product.thumbnail}
                 alt={product.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="p-4">
